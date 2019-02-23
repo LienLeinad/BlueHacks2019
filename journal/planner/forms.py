@@ -20,4 +20,4 @@ class PlanModelForm(forms.ModelForm):
 
     class Meta:
         model = Plans
-        fields = ('day', 'time_start', 'time_end', 'plan_title', 'plan_desc','plan_tag')
+        fields = ('time_start', 'time_end', 'plan_title', 'plan_desc','plan_tag')

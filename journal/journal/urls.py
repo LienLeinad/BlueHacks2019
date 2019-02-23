@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.index),
     path('day_form/', views.day_form),
     path('plan_form/', views.plan_form),
+    path('<day_made>/', views.day_page, name = 'day_page')
 ]

@@ -28,18 +28,20 @@
 					{{day_form}}
 					<br><br>
 	  				
-	  				<button type="submit"> add day</button>
+	  				<button name="submit"> add day</button>
 				</form> 
 	  		</div>
 		</div>
 		<!-- end of modal code-->
 		{% for day in day_list %}
-		
+		<form action = "{{day.day_made|date:'Y-m-d'}}">
+				
 			<div id="plan-card" class="plan">
 				<h1>{{day.day_made}}</h1><br>
-				
+				<input name= "day_made" required id = "disabledInput" value = "{{day.day_made}}" disabled style = "display:none;">
+				<button name = "view_day"> View Day</button>
 			</div>
-		
+		</form>
 		{% endfor %}
 	</div>
 	<script src="{% static 'modals.js'%}"></script>
