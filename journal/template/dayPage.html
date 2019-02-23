@@ -9,10 +9,10 @@
 
 </head>
 <body>
+	<button onclick="alerter()">test here</button>
 	<a href = "../"> <button id="back" ><</button></a>
-	<div id="tip">
-		
-		{{ tip_list.tip_content }}
+	<div >
+		<p id="tip" style="display: none;">{{ tip_list.tip_content }}</p>
 	</div>
 	<div id ="middle">
 		<div id="date">
@@ -66,5 +66,11 @@
 	<h3 id="time">time</h3>
 	<script src="{% static 'modalsDayPage.js' %}"></script>
 	<script src="{% static 'tipsNotifs.js' %}"></script>
+	<script >
+		function alerter(){
+			var a = document.getElementById("tip").value;
+			alert(a);
+		}
+	</script>
 </body>
 </html>
