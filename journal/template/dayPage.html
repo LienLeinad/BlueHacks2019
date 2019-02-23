@@ -11,8 +11,8 @@
 <body>
 	<button onclick="alerter()">test here</button>
 	<a href = "../"> <button id="back" ><</button></a>
-	<div >
-		<p id="tip" style="display: none;">{{ tip_list.tip_content }}</p>
+	<div id="tip">
+		{{ tip_list.tip_content }}
 	</div>
 	<div id ="middle">
 		<div id="date">
@@ -68,8 +68,9 @@
 	<script src="{% static 'tipsNotifs.js' %}"></script>
 	<script >
 		function alerter(){
-			var a = document.getElementById("tip").value;
-			alert(a);
+			var span = document.createElement('span');
+			span.innerHTML='<div id="tip">{{ tip_list.tip_content }}</div>';
+			alert(span.textContent);
 		}
 	</script>
 </body>
