@@ -20,4 +20,6 @@ from planner import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('day_form/', views.day_form),
+    path('plan_form/', views.plan_form),
 ]

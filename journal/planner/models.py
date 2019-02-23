@@ -6,8 +6,8 @@ from django.db import models
 class Day(models.Model):
     day_made = models.DateField()
     time_stamp = models.DateTimeField(auto_now = True)
-    # def __str__(self):
-    #     return self.day_made
+    def __str__(self):    
+        return str(self.day_made)
 
 # model to store plans within the day
 class Plans(models.Model):
