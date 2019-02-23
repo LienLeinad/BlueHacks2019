@@ -21,7 +21,7 @@ class Plans(models.Model):
     time_start = models.TimeField('Time Start')
     time_end = models.TimeField('Time End')
     plan_title = models.CharField(max_length = 20)
-    plan_desc = models.TextField(max_length = 300)
+    plan_description = models.TextField(max_length = 300)
     TAG_CHOICES = (
         (PHYSICAL, 'Physical'),
         (EMOTIONAL, 'Emotional'),
@@ -54,6 +54,7 @@ class Tips(models.Model):
     )
     tip_content = models.TextField(max_length=100)
     tip_title = models.CharField(max_length = 30)
+    tip_ID = models.IntegerField()
     response_for_tag = models.CharField(
         max_length = 10,
         choices = TAG_CHOICES     
