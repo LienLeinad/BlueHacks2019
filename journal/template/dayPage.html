@@ -8,9 +8,15 @@
 
 </head>
 <body>
+
+	<div>
+		<h1 style="text-align: center;">{{day_made}}</h1>
+  </div>
+
 	<button id="back"><</button>
 	<div id="tip">
 		This is your daily reminder to drink water before your next meeting!
+
 	</div>
 	<div id ="middle">
 		<div id="date">
@@ -27,17 +33,21 @@
 					Activity - Description
 				</th>
 			</tr>
+			{% for plan in plan_list %}
 			<tr>
+			
 				<td id="time" valign="top">
-					11:00PM
+					{{ plan.time_start }} - {{ plan.time_end }} 
 				</td>
 				<td valign="top">
-					<div id="plan">Placeholder</div>
+					<div id="plan">{{ plan.plan_title }}</div>
 					<p id="description">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						{{plan.plan_desc}}
 					</p>
 				</td>
+				
 			</tr>
+			{% endfor %}
 		</table>
 	</div>
 	</div>
@@ -47,6 +57,12 @@
   		<div class="modal-content">
    			<span class="close">&times;</span>
 			<div>
+
+  				<form method ='post'>
+					{% csrf_token %}
+					{{form}}
+					<button name = 'submit_plan'>add plan</button>
+				</form>
   				<h1 id="modal-date">January</h1><input id="btn" type="button" value="Add Plan" >
 				<div id="modal-time">
 					<table cellpadding="20">
@@ -57,15 +73,18 @@
 						{% for plan in plan_list %}  
 		  				<tr>
 		  					<td style="text-align: right;">{{plan.time_start}} - {{ plan.time_end }}</td>
-		  					<td><h2>{{ plan.plan_title }}</h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+		  					<td><h2>{{ plan.plan_title }}</h2>
+                  <p> {{ plan.plan_desc }}</p>
+                </td>
 						</tr>
 						{% endfor %}  
 			  		</table>
 			  	</div>
+
 	  		</div>
 		</div>
 	</div>
 
-	<script src="modalsDayPage.js"></script>
+	<script src="{% static 'modalsDayPage.js' %}"></script>
 </body>
 </html>
