@@ -15,15 +15,22 @@ h1 {
 	padding: 30px;
 }
 
-#plan-card {
+.plan {
 	font-family: Arial;
 	background-color: white;
+}
+
+#plan-card {	
 	text-align: center;
 	width: 230px;
-	height: 100px;
+	height: 65px;
 	border-radius: 15px;
 	padding: 40px 10px 40px 10px;
 	box-shadow: 5px 5px 15px grey;
+}
+
+#btn {
+	float: right;
 }
 
 .view-btn {
@@ -32,9 +39,4 @@ h1 {
 	border: none;
 	width: 100px;
 	height: 35px;
-}
-
-#th1,#th2{
-	text-align: center;
-	width: 600px;
 }
