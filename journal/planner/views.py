@@ -36,8 +36,12 @@ def day_page(request,day_made):
                 return redirect('./')
     
     plan_list = Plans.objects.order_by('time_start')[0:]
-    tip_list = Tips.objects.order_by('?').filter(response_for_tag = plan_list[0].plan_tag)[0]   
-    print(tip_list.tip_title +"  Tip Given")
+    tip_list = ''
+    if (len(plan_list) == 0):
+        True
+    else:
+        tip_list = Tips.objects.order_by('?').filter(response_for_tag = plan_list[0].plan_tag)[0]   
+    # print(tip_list.tip_title +"  Tip Given")
     day_made = day_made
     form = PlanModelForm()
     context = {'plan_list': plan_list, 'day_made':day_made, 'form':form, 'tip_list':tip_list}
