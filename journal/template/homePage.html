@@ -4,11 +4,13 @@
 
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="{% static 'modals.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'homePage.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'modals.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'homePage.css'%}">
+	
 </head>
 
 <body>
+	
 	<div>
 		<h1>Welcome!</h1>
 	</div>
@@ -18,29 +20,26 @@
 		<div id="btn-home-add-day"><button class="btn-home">Add Day</button></div>
 
 		<!-- modal code add plan-->
-		<div id="addDay" class="modal">
+		<div id="myModal" class="modal">
 	  		<div class="modal-content">
-	   			<span class="close3">&times;</span>
-				<form action="">
-					Day:<br>
-					<input type="text" name="eventtime"><br><br>
+	   			<span class="close">&times;</span>
+				<form method="post">
+					{% csrf_token %}
+					{{day_form}}
+					<br><br>
 	  				
-	  				<input type="submit">
+	  				<button type="submit"> add day</button>
 				</form> 
 	  		</div>
 		</div>
 		<!-- end of modal code-->
-
 		{% for day in day_list %}
-		<a href="dayPage.html">
 		<div id="plan-card" class="plan">
-			<h1>{{day.day_made}}</h1>
+			<h1>{{day.day_made}}<br>
 		</div>
-		</a>
 		{% endfor %}
-    <script src="{% static 'modals.js' %}"></script>
-
 	</div>
+	<script src="{% static 'modals.js'%}"></script>
 
 </body>
 
