@@ -33,6 +33,12 @@ body {
 	float: top;
 }
 
+.plan-card-day-text{
+	font-size: 2.5vw;
+	font-weight: bolder;
+	font-family: 'Laila';
+}
+
 .plan-card-line {
 	margin: 5px auto;
 	width: 100px;
@@ -81,4 +87,20 @@ body {
 	border: none;
 	width: 100px;
 	height: 35px;
+}
+
+a:link{
+  color:black;
+}
+a:visited{
+  color:black;
+}
+a:hover{
+  color:black;
+}
+a:focus{
+  color:black;
+}
+a:active{
+  color:black;
 }

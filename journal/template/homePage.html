@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'modals.css'%}">
 	<link rel="stylesheet" type="text/css" href="{% static 'homePage.css'%}">
 	<link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+	<link href='https://fonts.googleapis.com/css?family=Laila' rel='stylesheet'>
 	
 </head>
 
@@ -27,7 +28,6 @@
 					{% csrf_token %}
 					{{day_form}}
 					<br><br>
-	  				
 	  				<button name="submit"> add day</button>
 				</form> 
 	  		</div>
@@ -35,12 +35,13 @@
 		<!-- end of modal code-->
 		<div class="plan-card-area">
 			{% for day in day_list %}
-			<form action = "{{day.day_made|date:'Y-m-d'}}">
+			<form action = "">
+				<a href="{{day.day_made|date:'Y-m-d'}}">
 				<div id="plan-card" class="plan">
 					<div class="plan-card-area-header"></div>
-					<h1>{{day.day_made}}</h1><br>
-						<button name = "view_day"> View Day</button>
+					<div class="plan-card-day-text"><p>{{day.day_made}}</p></div><br>
 				</div>
+				</a>
 			</form>
 			{% endfor %}
 		</div>
