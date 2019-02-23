@@ -31,8 +31,9 @@
 			</tr>
 			{% for plan in plan_list %}
 			<tr>
-			
+				{% if plan.day.day_made|date:'Y-m-d' == day_made %}
 				<td id="time" valign="top">
+					
 					{{ plan.time_start }} - {{ plan.time_end }} 
 				</td>
 				<td valign="top">
@@ -41,7 +42,7 @@
 						{{plan.plan_desc}}
 					</p>
 				</td>
-				
+				{% endif %}
 			</tr>
 			{% endfor %}
 		</table>
