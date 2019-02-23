@@ -3,7 +3,9 @@
 
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="modals.css">
 	<link rel="stylesheet" type="text/css" href="homePage.css">
+
 </head>
 
 <body>
@@ -15,13 +17,30 @@
 
 		<div id="plan-card" class="plan">
 			<h1>January<br>23</h1>
-			<br>
-			<button class="view-btn">View</button>
 		</div>
 
 
 	</div>
 
+
+<!-- modal code -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+<form action="/action_page.php">
+  Event name:<br>
+  <input type="text" name="eventname" value="">
+  <br>
+  Event Description:<br>
+  <input type="text" name="eventdesc" value="">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+  </div>
+</div>
+<!-- end of modal code-->
+    <script src="modals.js"></script>
 </body>
 
 </html>
