@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'modals.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'homePage.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
+	
+</head>
+
+<body>
+	<div id="welcome">
+		<h2>Welcome to 2019</h2>
+	</div>
+
+	<div class="planner-area">
+
+		<div id="btn-home-add-day"><button class="btn-home">+</button></div>
+
+		<!-- modal code add plan-->
+		<div id="myModal" class="modal">
+	  		<div class="modal-content">
+	   			<span class="close">&times;</span>
+				<form method="post">
+					{% csrf_token %}
+					{{day_form}}
+					<br><br>
+	  				
+	  				<button type="submit"> add day</button>
+				</form> 
+	  		</div>
+		</div>
+		<!-- end of modal code-->
+		<div class="plan-card-area">
+
+			{% for day in day_list %}
+			
+				<div id="plan-card" class="plan">
+					<div class="plan-card-area-header"></div>
+					<h1>{{day.day_made}}</h1><br>
+					
+				</div>
+			
+			{% endfor %}
+		</div>
+	</div>
+	<script src="{% static 'modals.js'%}"></script>
+
+</body>
+
+</html>
