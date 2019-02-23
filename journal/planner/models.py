@@ -31,7 +31,7 @@ class Plans(models.Model):
         (SPIRITUAL,'Spiritual'),
     )
     plan_tag = models.CharField(
-        max_length = 10,
+        max_length = 15,
         choices = TAG_CHOICES     
     )
     def __str__(self):
@@ -56,7 +56,7 @@ class Tips(models.Model):
     tip_title = models.CharField(max_length = 30)
     tip_ID = models.IntegerField()
     response_for_tag = models.CharField(
-        max_length = 10,
+        max_length = 15,
         choices = TAG_CHOICES     
     )
     def __str__(self):
