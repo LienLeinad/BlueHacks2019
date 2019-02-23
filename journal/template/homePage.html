@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'modals.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'homePage.css' %}">
+</head>
+
+<body>
+	<div>
+		<h1>Welcome!</h1>
+	</div>
+
+	<div class="planner-area">
+
+		<div id="btn-home-add-day"><button class="btn-home">Add Day</button></div>
+
+		<!-- modal code add plan-->
+		<div id="addDay" class="modal">
+	  		<div class="modal-content">
+	   			<span class="close3">&times;</span>
+				<form action="">
+					Day:<br>
+					<input type="text" name="eventtime"><br><br>
+	  				
+	  				<input type="submit">
+				</form> 
+	  		</div>
+		</div>
+		<!-- end of modal code-->
+
+		{% for day in day_list %}
+		<div id="plan-card" class="plan">
+			<h1>{{day.day_made}}</h1>
+		</div>
+		{% endfor %}
+	<!-- modal code plans-->
+	<div id="myModal" class="modal">
+  		<div class="modal-content">
+   			<span class="close">&times;</span>
+			<div>
+  				<h1 id="modal-date">January</h1><input id="btn" type="button" value="Add Plan" >
+				<div id="modal-time">
+					<table cellpadding="20">
+						<tr>
+		  					<th id="th1">Time</th>
+		  					<th id="th2">Event Name</th>
+						</tr>
+						{% for plan in plan_list %}  
+		  				<tr>
+		  					<td style="text-align: right;">{{plan.time_start}} - {{ plan.time_end }}</td>
+		  					<td><h2>{{ plan.plan_title }}</h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+						</tr>
+						{% endfor %}  
+			  		</table>
+			  	</div>
+	  		</div>
+		</div>
+	</div>
+	
+	<!-- end for here -->
+	<!-- end of modal code-->
+
+	<!-- modal code add plan-->
+	<div id="myModal2" class="modal">
+  		<div class="modal-content">
+   			<span class="close2">&times;</span>
+			<form action="">
+				Time:<br>
+				<input type="text" name="eventtime"><br>
+  				Event Name:<br>
+  				<input type="text" name="eventname" value=""><br>
+  				Event Description:<br>
+  				<input type="text" name="eventdesc" value=""><br><br>
+  				<input type="submit">
+			</form> 
+  		</div>
+	</div>
+	<!-- end of modal code-->
+    <script src="{% static 'modals.js' %}"></script>
+
+	</div>
+
+</body>
+
+</html>
