@@ -67,6 +67,17 @@ a #plan-card {
 	font-size: 3px;
 }
 
+form {
+	text-align: center;
+}
+
+button[name="submit"] {
+	border: none;
+	color: white;
+	background-color: #794465;
+	font-size: 1em;
+}
+
 .btn-home {
 	background-color: #794465;
     font-size: 3vw;
