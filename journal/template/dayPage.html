@@ -9,9 +9,9 @@
 
 </head>
 <body>
+	<button onclick="alerter()">test here</button>
 	<a href = "../"> <button id="back" ><</button></a>
 	<div id="tip">
-		
 		{{ tip_list.tip_content }}
 	</div>
 	<div id ="middle">
@@ -66,5 +66,12 @@
 	<h3 id="time-clock">time</h3>
 	<script src="{% static 'modalsDayPage.js' %}"></script>
 	<script src="{% static 'tipsNotifs.js' %}"></script>
+	<script >
+		function alerter(){
+			var span = document.createElement('span');
+			span.innerHTML='<div id="tip">{{ tip_list.tip_content }}</div>';
+			alert(span.textContent);
+		}
+	</script>
 </body>
 </html>
