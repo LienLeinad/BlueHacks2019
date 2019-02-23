@@ -77,3 +77,30 @@ body{
 
     color: white;
 }
+#id_time_start{
+	margin-right: 5vw;
+	margin-bottom: 1vw;
+	width: 8vw;
+}
+#id_time_end{
+	margin-right: 5vw;
+	margin-bottom: 1vw;
+	width: 8vw;
+}
+#id_plan_title{
+	margin-right: 10vw;
+	margin-bottom: 1vw;
+	width: 20vw;
+}
+#id_plan_desc{
+	margin-right: 10vw;
+	margin-bottom: .5vw;
+	width: 25vw;
+}
+#id_plan_tag{
+	margin-right: 10vw;
+	margin-bottom: 1vw;
+	width: 20vw;
+}
+button[name="submit_plan"]{
+}
