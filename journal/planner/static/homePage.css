@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #ae809d;
+	font-family: Bahnschrift;
 }
 
 #welcome {
@@ -27,16 +28,15 @@ body {
 }
 
 .plan-card-area-header {
-	background-color: #a0a3aa;
+	background-color: #bec2cc;
 	width: 230px;
-	height: 10px;
+	height: 30px;
 	float: top;
 }
 
 .plan-card-day-text{
 	font-size: 2.5vw;
-	font-weight: bolder;
-	font-family: 'Laila';
+	margin: 35% 0 35% 0;
 }
 
 .plan-card-line {
@@ -47,7 +47,7 @@ body {
 }
 
 .plan {
-	font-family: Arial;
+	
 	background-color: white;
 }
 
@@ -55,7 +55,7 @@ a #plan-card {
 	background-color: #d9dce8;
 	width: 230px;
 	height: 230px;
-	padding: 1%;
+
 	box-shadow: 5px 5px 15px grey;
 	margin: 10px 15px 10px 15px;
 	display: inline-block;
@@ -71,11 +71,28 @@ form {
 	text-align: center;
 }
 
+#id_day_made {
+	text-align: center;
+	font-size: 1.5em;
+	font-family: Bahnschrift;
+}
+
+label[for=id_day_made] {
+	font-size: 2em;
+}
+
+#plan-card-formattext {
+	font-family: Arial;
+}
+
 button[name="submit"] {
 	border: none;
+	border-radius: 15px;
 	color: white;
 	background-color: #794465;
-	font-size: 1em;
+	font-size: 1.2em;
+	width: 30%;
+	padding: 2%;
 }
 
 .btn-home {
@@ -98,6 +115,10 @@ button[name="submit"] {
 	border: none;
 	width: 100px;
 	height: 35px;
+}
+
+.close {
+	float: right;
 }
 
 a:link{

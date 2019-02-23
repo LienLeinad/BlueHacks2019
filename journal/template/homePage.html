@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'modals.css'%}">
 	<link rel="stylesheet" type="text/css" href="{% static 'homePage.css'%}">
 	<link rel="stylesheet" type="text/css" href="{% static 'main.css'%}">
-	<link href='https://fonts.googleapis.com/css?family=Laila' rel='stylesheet'>
 	
 </head>
 
@@ -24,12 +23,15 @@
 		<div id="myModal" class="modal">
 	  		<div class="modal-content">
 	   			<span class="close">&times;</span>
-				<form method="post">
-					{% csrf_token %}
-					{{day_form}}
-					<br><br>
-	  				<button name="submit"> add day</button>
-				</form> 
+	   			<div>
+					<form method="post">
+						{% csrf_token %}
+						{{day_form}}
+						<br>
+						<h3 id="plan-card-formattext">Accepted format: yyyy/mm/dd</h3>
+		  				<button name="submit">Add Day</button>
+					</form> 
+				</div>
 	  		</div>
 		</div>
 		<!-- end of modal code-->
