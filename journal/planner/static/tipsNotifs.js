@@ -1,22 +1,15 @@
-// store the text in a var
-var tipNotif = document.getElementByID('tip');
-var tip = document.getElementByID('tip-container');
+function setTime() {
 
-// store 
-
-// create time object
 var currentTime = new Date();
 
-// create minute object
-var currentMinute = currentTime.getDate();
+var h = currentTime.getHours();
+var m = currentTime.getMinutes();
+var s = currentTime.getSeconds();
 
-// while time != 1min, don show
-// show notif when 1min
-// hide notif after 1min
-
-
-
-function fn() {
-	alert(Date());
+	document.getElementById("time").innerText = h + ":" + m + ":" + s;
+	document.getElementById("time").textContent = h + ":" + m + ":" + s;
+	setTimeout(setTime, 1000);
 }
 
+
+setTime();
