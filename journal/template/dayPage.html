@@ -10,9 +10,8 @@
 </head>
 <body>
 	<button id="back"><</button>
-	<div id="tip">
-		This is your daily reminder to drink water before your next meeting!
-
+	<div id="tip-container" onclick="fn()">
+		<h4 id="tip">This is your daily reminder to drink water before your next meeting!</h4>
 	</div>
 	<div id ="middle">
 		<div id="date">
@@ -64,5 +63,6 @@
 	</div>
 
 	<script src="{% static 'modalsDayPage.js' %}"></script>
+	<script src="{% static 'tipsNotifs.js' %}"></script>
 </body>
 </html>

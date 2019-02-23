@@ -38,7 +38,7 @@ body{
 #tableHead{
 	font-size: 1.2vw;
 }
-#tip{
+#tip-container{
 	padding: .3vw;
 	text-align: center;
 	font-size: 1.8vw;
