@@ -1,19 +1,31 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="{% static 'modals.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'dayPage.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+
 </head>
 <body>
+
 	<div>
 		<h1 style="text-align: center;">{{day_made}}</h1>
+  </div>
+
+	<button id="back"><</button>
+	<div id="tip">
+		This is your daily reminder to drink water before your next meeting!
+
 	</div>
+	<div id ="middle">
+		<div id="date">
+			Date Placeholder
+		</div>
 
 	<div>
 		<table id="wow">
-			<tr>
+			<tr id="tableHead">
 				<th width="30%">
 					Time
 				</th>
@@ -38,18 +50,37 @@
 			{% endfor %}
 		</table>
 	</div>
-
+	</div>
 	<button id="addPlan">+</button>
 
 	<div id="myModal" class="modal">
   		<div class="modal-content">
    			<span class="close">&times;</span>
 			<div>
+
   				<form method ='post'>
 					{% csrf_token %}
 					{{form}}
 					<button name = 'submit_plan'>add plan</button>
 				</form>
+  				<h1 id="modal-date">January</h1><input id="btn" type="button" value="Add Plan" >
+				<div id="modal-time">
+					<table cellpadding="20">
+						<tr>
+		  					<th id="th1">Time</th>
+		  					<th id="th2">Event Name</th>
+						</tr>
+						{% for plan in plan_list %}  
+		  				<tr>
+		  					<td style="text-align: right;">{{plan.time_start}} - {{ plan.time_end }}</td>
+		  					<td><h2>{{ plan.plan_title }}</h2>
+                  <p> {{ plan.plan_desc }}</p>
+                </td>
+						</tr>
+						{% endfor %}  
+			  		</table>
+			  	</div>
+
 	  		</div>
 		</div>
 	</div>

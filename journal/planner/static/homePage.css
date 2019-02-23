@@ -1,18 +1,43 @@
 body {
-	margin: 0 auto;
-	margin-top: 0px;
+	margin: 0;
 	padding: 0;
+	background-color: #ae809d;
 }
 
-h1 {
-	margin: 0;
+#welcome {
+	text-align: center;
+	font-size: 3.2vw;
+	margin: 2.5vw;
+	background-color: grey;
+	margin-left: auto;
+	margin-right: auto;
+	width: 45%;
 }
 
 .planner-area {
 	margin: 0 auto;
-	background-color: #c9d6ff;
-	width: 90%;
+	background-color: white;
+	border-radius: 25px;
+	width: 80%;
 	padding: 30px;
+}
+
+.plan-card-area {
+	text-align: center;
+}
+
+.plan-card-area-header {
+	background-color: #a0a3aa;
+	width: 230px;
+	height: 10px;
+	float: top;
+}
+
+.plan-card-line {
+	margin: 5px auto;
+	width: 100px;
+	height: 7px;
+	background-color: #ae809d;
 }
 
 .plan {
@@ -20,24 +45,34 @@ h1 {
 	background-color: white;
 }
 
-#plan-card {	
-	text-align: center;
+#plan-card {
+	background-color: #d9dce8;
 	width: 230px;
-	height: 65px;
-	border-radius: 15px;
-	padding: 40px 10px 40px 10px;
+	height: 230px;
+	padding: 1%;
 	box-shadow: 5px 5px 15px grey;
-	margin: 10px 5px 10px 5px;
+	margin: 10px 15px 10px 15px;
 	display: inline-block;
 }
 
-#btn {
-	text-align: right;
-	position: absolute;
+
+.errorlist {
+	color: white;
+	font-size: 3px;
 }
 
-#btn-home-add-day {
-	position: absolute;
+.btn-home {
+	background-color: #794465;
+    font-size: 3vw;
+    color: white;
+    position: fixed;
+	border: none;
+	box-shadow: 5px 8px 10px #545454;
+	border-radius: 50%;
+    bottom: 9%;
+    right:3%;
+    height: 8%;
+    width: 4%;
 }
 
 .view-btn {
