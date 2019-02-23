@@ -54,6 +54,7 @@ class Tips(models.Model):
     )
     tip_content = models.TextField(max_length=100)
     tip_title = models.CharField(max_length = 30)
+    tip_ID = models.IntegerField()
     response_for_tag = models.CharField(
         max_length = 10,
         choices = TAG_CHOICES     
