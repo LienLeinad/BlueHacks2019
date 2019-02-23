@@ -34,11 +34,12 @@
 		</div>
 		<!-- end of modal code-->
 		{% for day in day_list %}
-		<a href="#">
+		
 			<div id="plan-card" class="plan">
-				<h1>{{day.day_made}}<br>
+				<h1>{{day.day_made}}</h1><br>
+				
 			</div>
-		</a>
+		
 		{% endfor %}
 	</div>
 	<script src="{% static 'modals.js'%}"></script>

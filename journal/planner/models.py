@@ -36,4 +36,28 @@ class Plans(models.Model):
     )
     def __str__(self):
         return self.plan_title
+
+class Tips(models.Model):
+    PHYSICAL = 'Physical'
+    EMOTIONAL = 'Emotional'
+    SOCIAL = 'Social'
+    OCCUPATIONAL = 'Occupational'
+    INTELLECTUAL = 'Intellectual'
+    SPIRITUAL = 'Spiritual'
+    TAG_CHOICES = (
+        (PHYSICAL, 'Physical'),
+        (EMOTIONAL, 'Emotional'),
+        (SOCIAL, 'Social'),
+        (OCCUPATIONAL, 'Occupational'),
+        (INTELLECTUAL, 'Intellectual'),
+        (SPIRITUAL,'Spiritual'),
+    )
+    tip_content = models.TextField(max_length=100)
+    tip_title = models.CharField(max_length = 30)
+    response_for_tag = models.CharField(
+        max_length = 10,
+        choices = TAG_CHOICES     
+    )
+    def __str__(self):
+        return self.tip_title
     
