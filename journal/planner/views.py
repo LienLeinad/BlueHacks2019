@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import Day, Plans
+from .models import Day, Plans,Tips
 from .forms import DayForm,PlanForm,DayModelForm,PlanModelForm
 # Create your views here.
 def index(request):
@@ -29,15 +29,18 @@ def day_page(request,day_made):
                 time_start = plan_form.cleaned_data['time_start']
                 time_end = plan_form.cleaned_data['time_end']
                 plan_title = plan_form.cleaned_data['plan_title']
-                plan_desc = plan_form.cleaned_data['plan_desc']
+                plan_description = plan_form.cleaned_data['plan_description']
                 plan_tag = plan_form.cleaned_data['plan_tag']
-                plan_obj = Plans(day = day, time_start = time_start, time_end = time_end, plan_title = plan_title, plan_desc = plan_desc, plan_tag = plan_tag)
+                plan_obj = Plans(day = day, time_start = time_start, time_end = time_end, plan_title = plan_title, plan_description = plan_description, plan_tag = plan_tag)
                 plan_obj.save()
                 return redirect('./')
+    
     plan_list = Plans.objects.order_by('time_start')[0:]
+    tip_list = Tips.objects.order_by('?').filter(response_for_tag = plan_list[0].plan_tag)[0]   
+    print(tip_list.tip_title +"  Tip Given")
     day_made = day_made
     form = PlanModelForm()
-    context = {'plan_list': plan_list, 'day_made':day_made, 'form':form}
+    context = {'plan_list': plan_list, 'day_made':day_made, 'form':form, 'tip_list':tip_list}
     return render(request, 'dayPage.html', context)
 def day_form(request):
     if request.method == "POST":
