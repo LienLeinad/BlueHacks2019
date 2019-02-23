@@ -92,15 +92,14 @@ body{
 	margin-bottom: 1vw;
 	width: 20vw;
 }
-#id_plan_desc{
-	margin-right: 10vw;
+#id_plan_description{
+	margin-right: 20vw;
 	margin-bottom: .5vw;
-	width: 25vw;
+	width: 20vw;
 }
 #id_plan_tag{
+	margin-left: 1vw;
 	margin-right: 10vw;
 	margin-bottom: 1vw;
 	width: 20vw;
-}
-button[name="submit_plan"]{
 }
