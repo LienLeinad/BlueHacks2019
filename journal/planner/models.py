@@ -52,7 +52,7 @@ class Tips(models.Model):
         (INTELLECTUAL, 'Intellectual'),
         (SPIRITUAL,'Spiritual'),
     )
-    tip_content = models.TextField(max_length=100)
+    tip_content = models.TextField(max_length=400)
     tip_title = models.CharField(max_length = 30)
     tip_ID = models.IntegerField()
     response_for_tag = models.CharField(

@@ -11,7 +11,6 @@
 <body>
 	<a href = "../"> <button id="back" ><</button></a>
 	<div id="tip">
-
 		{{ tip_list.tip_content }}
 	</div>
 	<div id ="middle">
@@ -96,7 +95,7 @@
 			var an = werParse(ans);
 			if(pt == an ){
 				if(truth == false)
-					alert("You have a plan");
+					alert("You have a plan at {{ latest_plan_time }}!");
 					truth = true;
 					// document.getElementById("delete-form").submit()
 					var someLink = document.querySelector('.delete-button');
