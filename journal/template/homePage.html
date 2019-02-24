@@ -13,7 +13,7 @@
 
 <body>
 	<div id="welcome">
-		<h2>Welcome to 2019</h2>
+		<h2>Placeholder</h2>
 	</div>
 
 	<div class="planner-area">
@@ -24,12 +24,14 @@
 		<div id="myModal" class="modal">
 	  		<div class="modal-content">
 	   			<span class="close">&times;</span>
-				<form method="post">
-					{% csrf_token %}
-					{{day_form}}
-					<br><br>
-	  				<button name="submit"> add day</button>
-				</form> 
+	   			<div style="text-align: left;">
+					<form method="post">
+						{% csrf_token %}
+						{{day_form}}
+						<p>*Accepted Formats:<br>YYYY/MM/DD and YYYY/M/D</p>
+		  				<button name="submit" id="btn-add-day">Add Day</button>
+					</form> 
+				</div>
 	  		</div>
 		</div>
 		<!-- end of modal code-->
