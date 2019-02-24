@@ -34,6 +34,11 @@ def day_page(request,day_made):
                 plan_obj = Plans(day = day, time_start = time_start, time_end = time_end, plan_title = plan_title, plan_description = plan_description, plan_tag = plan_tag)
                 plan_obj.save()
                 return redirect('./')
+        if 'delete_plan' in request.POST:
+            latest_plan_time = Plans.objects.all()[0].time_start
+            print("DELET DIS")
+            Plans.objects.filter(time_start = latest_plan_time).delete()
+            return redirect('./')
     
     plan_list = Plans.objects.order_by('time_start')[0:]
     latest_plan_time = 0

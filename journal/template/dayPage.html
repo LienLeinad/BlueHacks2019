@@ -9,7 +9,6 @@
 
 </head>
 <body>
-	<button onclick="checkLatest()">test</button>
 	<a href = "../"> <button id="back" ><</button></a>
 	<div id="tip">
 
@@ -40,7 +39,7 @@
 				<td valign="top">
 					<div id="plan">{{ plan.plan_title }}</div>
 					<p id="description">
-						{{plan.plan_desc}}
+						{{plan.plan_description}}
 					</p>
 				</td>
 				{% endif %}
@@ -60,11 +59,13 @@
 					{% csrf_token %}
 					{{form}}
 					<button name = 'submit_plan'>add plan</button>
+					
 				</form>
 	  		</div>
 		</div>
 	</div>
 	<h3 id="time-clock">time</h3>
+	<form method = 'post' id = 'delete-form'><button name = 'delete_plan' class = 'delete-button'>{% csrf_token %}TEST</button></form>
 	<script src="{% static 'modalsDayPage.js' %}"></script>
 	<script src="{% static 'tipsNotifs.js' %}"></script>
 	<script >
@@ -73,6 +74,16 @@
 			span.innerHTML='<div id="tip">{{ tip_list.tip_content }}</div>';
 			alert(span.textContent);
 		}
+		var simulateClick = function (elem) {
+		// Create our event (with options)
+		var evt = new MouseEvent('click', {
+			bubbles: true,
+			cancelable: true,
+			view: window
+		});
+		// If cancelled, don't dispatch our event
+		var canceled = !elem.dispatchEvent(evt);
+		};
 		var truth = false;
 		function checkLatest(){
 			var f = "{{ latest_plan_time }}";
@@ -87,6 +98,9 @@
 				if(truth == false)
 					alert("You have a plan");
 					truth = true;
+					// document.getElementById("delete-form").submit()
+					var someLink = document.querySelector('.delete-button');
+					simulateClick(someLink);
 			}
 			else{
 				truth = false;
