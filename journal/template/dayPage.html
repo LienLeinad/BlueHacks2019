@@ -9,9 +9,10 @@
 
 </head>
 <body>
-	<button onclick="alerter()">test here</button>
+	<button onclick="checkLatest()">test</button>
 	<a href = "../"> <button id="back" ><</button></a>
 	<div id="tip">
+
 		{{ tip_list.tip_content }}
 	</div>
 	<div id ="middle">
@@ -71,6 +72,51 @@
 			var span = document.createElement('span');
 			span.innerHTML='<div id="tip">{{ tip_list.tip_content }}</div>';
 			alert(span.textContent);
+		}
+		var truth = false;
+		function checkLatest(){
+			var f = "{{ latest_plan_time }}";
+			var d = new Date();
+			var a = d.getHours();
+			var b = d.getMinutes();
+			var c = d.getSeconds();
+			var ans = a+":"+b+":"+c;
+			var pt = werParse(f);
+			var an = werParse(ans);
+			if(pt == an ){
+				if(truth == false)
+					alert("You have a plan");
+					truth = true;
+			}
+			else{
+				truth = false;
+			}
+			
+			setTimeout(checkLatest, 1000);
+
+		}
+		checkLatest();
+		function werParse(a){
+			var n1 = a.length;
+			var c = 0;
+			var b = "";
+			var i = 0;
+			while(i<n1){
+				if(a.charAt(i)==':'){
+					c++;
+					if(c == 2){
+						break;
+					}
+				}
+				else if(a.charAt(i)==' '){
+					break;
+				}
+				else{
+					b = b + a.charAt(i);
+				}
+				i+=1;
+			}
+			return b;
 		}
 	</script>
 </body>

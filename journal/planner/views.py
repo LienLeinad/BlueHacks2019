@@ -36,6 +36,9 @@ def day_page(request,day_made):
                 return redirect('./')
     
     plan_list = Plans.objects.order_by('time_start')[0:]
+    latest_plan_time = 0
+    if(len(plan_list) != 0):
+        latest_plan_time = plan_list[0].time_start
     tip_list = ''
     if (len(plan_list) == 0):
         True
@@ -44,7 +47,7 @@ def day_page(request,day_made):
     # print(tip_list.tip_title +"  Tip Given")
     day_made = day_made
     form = PlanModelForm()
-    context = {'plan_list': plan_list, 'day_made':day_made, 'form':form, 'tip_list':tip_list}
+    context = {'plan_list': plan_list, 'day_made':day_made, 'form':form, 'tip_list':tip_list, 'latest_plan_time': latest_plan_time}
     return render(request, 'dayPage.html', context)
 def day_form(request):
     if request.method == "POST":
