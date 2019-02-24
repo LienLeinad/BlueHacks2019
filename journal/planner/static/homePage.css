@@ -16,7 +16,7 @@ body {
 
 .planner-area {
 	margin: 0 auto;
-	background-color: white;
+	background-color: #b8a083;
 	border-radius: 25px;
 	width: 80%;
 	padding: 30px;
@@ -43,22 +43,47 @@ body {
 	margin: 5px auto;
 	width: 100px;
 	height: 7px;
-	background-color: #ae809d;
 }
 
 .plan {
 	font-family: Arial;
-	background-color: white;
-}
-
-a #plan-card {
-	background-color: #d9dce8;
 	width: 230px;
 	height: 230px;
 	padding: 1%;
 	box-shadow: 5px 5px 15px grey;
 	margin: 10px 15px 10px 15px;
 	display: inline-block;
+
+}
+#parent:nth-of-type(10n+1){
+	background-color:  #008398;
+}
+#parent:nth-of-type(10n+2){
+	background-color:  #ff554a;
+}
+#parent:nth-of-type(10n+3){
+	background-color:  #ffc300;
+}
+#parent:nth-of-type(10n+4){
+	background-color: #00adc2;
+}
+#parent:nth-of-type(10n+5){
+	background-color:  #ff7569;
+}
+#parent:nth-of-type(10n+6){
+	background-color:  #008398;
+}
+#parent:nth-of-type(10n+7){
+	background-color:  #ff554a;
+}
+#parent:nth-of-type(10n+8){
+	background-color:  #ffc300;
+}
+#parent:nth-of-type(10n+9){
+	background-color:  #00adc2;
+}
+#parent:nth-of-type(10n+10){
+	background-color:  #ff7569;
 }
 
 
